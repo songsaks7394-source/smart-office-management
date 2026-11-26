@@ -44,6 +44,7 @@ export interface Database {
           avatar_url?: string | null;
           phone?: string | null;
         };
+        Relationships: [];
       };
       repair_requests: {
         Row: {
@@ -76,6 +77,7 @@ export interface Database {
           status?: RepairStatus;
           updated_at?: string;
         };
+        Relationships: [];
       };
       equipment_requests: {
         Row: {
@@ -108,6 +110,7 @@ export interface Database {
           reviewed_by?: string | null;
           reviewed_at?: string | null;
         };
+        Relationships: [];
       };
       borrow_records: {
         Row: {
@@ -136,6 +139,7 @@ export interface Database {
           return_date?: string | null;
           status?: BorrowStatus;
         };
+        Relationships: [];
       };
       meeting_rooms: {
         Row: {
@@ -154,6 +158,7 @@ export interface Database {
           capacity?: number;
           location?: string | null;
         };
+        Relationships: [];
       };
       room_bookings: {
         Row: {
@@ -184,6 +189,7 @@ export interface Database {
           end_time?: string;
           purpose?: string | null;
         };
+        Relationships: [];
       };
       notifications: {
         Row: {
@@ -209,8 +215,15 @@ export interface Database {
         Update: {
           is_read?: boolean;
         };
+        Relationships: [];
       };
     };
+    Views: { [_ in never]: never };
+    Functions: {
+      mark_overdue_assets: { Args: Record<PropertyKey, never>; Returns: undefined };
+    };
+    Enums: { [_ in never]: never };
+    CompositeTypes: { [_ in never]: never };
   };
 }
 
